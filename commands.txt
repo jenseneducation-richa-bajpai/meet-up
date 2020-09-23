@@ -1,0 +1,17 @@
+----docker----
+image name: docker-richa
+container name: dockerize-meetup
+appName: meet-up-richa
+
+----steps----
+----DOCKERIZE vue app----
+1. docker build -t docker-richa .
+2. docker run -it -p 8020:8080 --rm --name dockerize-meetup docker-richa
+
+----- Push an existing docker image to Heroku -----
+Repeat the above process to rebuild the image for any changes made in vue app
+
+1) heroku container:login 
+2) docker tag docker-richa registry.heroku.com/meet-up-richa/web
+3) docker push registry.heroku.com/meet-up-richa/web
+4) heroku container:release --app meet-up-richa web
