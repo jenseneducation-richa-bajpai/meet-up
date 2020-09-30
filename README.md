@@ -64,7 +64,7 @@ External file for data.
 8 meetups in .js file
 ```
 
-### Tests and building the
+### Tests and building the app
 
 ```
 Tested different components
