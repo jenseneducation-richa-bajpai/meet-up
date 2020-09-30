@@ -9,6 +9,7 @@
         <h1>{{ msg }}</h1>
       </div>
     </div>
+    <h2 id="event">Upcoming Events</h2>
     <EventsList v-bind:events="events" />
   </div>
 </template>
@@ -25,7 +26,7 @@ export default {
   },
   data() {
     return {
-      msg: "Meet people and let them become chapters in your stories",
+      msg: "Meet people and let them become chapters in your stories!",
     };
   },
   created() {
@@ -45,7 +46,6 @@ export default {
 .home-wrap {
   display: flex;
   flex-direction: column;
-  align-content: center;
 }
 /* div.image {
   width: 100%;
@@ -54,13 +54,14 @@ export default {
   margin-left: 220px;
 } */
 .meetup {
-  width: 80%;
-  height: 400px;
+  width: 90%;
+  height: 450px;
 }
 .message {
   h1 {
-    font-size: 3rem;
+    font-size: 2rem;
     padding-top: 50px;
+    font-style: italic;
   }
 
   .join {

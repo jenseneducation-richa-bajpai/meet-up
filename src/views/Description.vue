@@ -128,7 +128,7 @@ img {
 
 img {
   float: left;
-  width: 400px;
+  width: 500px;
   height: 400px;
 }
 </style>

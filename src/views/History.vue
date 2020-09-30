@@ -39,4 +39,9 @@ export default {
 </script>
 
 <style>
+h1 {
+  margin: auto 0;
+  font-size: 2rem;
+  padding: 40px 30px;
+}
 </style>
