@@ -2,12 +2,11 @@
   <div class="home">
     <Header />
     <div class="home-wrap">
-      <div class="message">
-        <h1>{{ msg }}</h1>
-        <button class="join">JOIN</button>
-      </div>
       <div class="image">
         <img class="meetup" alt="meetup" src="../assets/meetup2.jpg" />
+      </div>
+      <div class="message">
+        <h1>{{ msg }}</h1>
       </div>
     </div>
     <EventsList v-bind:events="events" />
@@ -31,6 +30,7 @@ export default {
   },
   created() {
     this.$store.dispatch("getData");
+    this.$store.state.commentBtn = false;
   },
   computed: {
     events() {
@@ -44,26 +44,20 @@ export default {
 
 .home-wrap {
   display: flex;
-  flex-direction: row;
-  margin: 20px;
+  flex-direction: column;
+  align-content: center;
 }
-div.image {
-  width: 90%;
+/* div.image {
+  width: 100%;
   height: 400px;
   margin: 10px;
-  margin-bottom: 0px;
-}
+  margin-left: 220px;
+} */
 .meetup {
-  width: auto;
+  width: 80%;
   height: 400px;
 }
 .message {
-  width: 400px;
-  display: flex;
-  flex-direction: column;
-  margin-left: 20px;
-  justify-content: center;
-  padding-left: 50px;
   h1 {
     font-size: 3rem;
     padding-top: 50px;

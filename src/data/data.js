@@ -1,4 +1,3 @@
-/* import meetup from "../assets/meetup.jpg"; */
 import design from "../assets/design.png";
 import biking from "../assets/biking.jpg";
 import stress from "../assets/stress.jpg";
@@ -104,6 +103,15 @@ function fetchData() {
 }
 export { fetchData };
 
+function fetchAttendList() {
+  const LS_KEY = "attendList";
+  let fromLs = localStorage.getItem(LS_KEY);
+  if (fromLs) {
+    return JSON.parse(fromLs);
+  }
+}
+export { fetchAttendList };
+
 const attendedEvents = [
   {
     id: 9,
@@ -137,3 +145,13 @@ function fetchAttendedData() {
   return JSON.parse(fromLS);
 }
 export { fetchAttendedData };
+
+function fetchReview() {
+  const LS_KEY = "review_list";
+  let fromLs = localStorage.getItem(LS_KEY);
+  if (fromLs) {
+    return JSON.parse(fromLs);
+  }
+}
+
+export { fetchReview };

@@ -15,9 +15,6 @@
               <div class="event-date">{{ event.date }} {{ event.time }}</div>
               <div class="place">{{ event.location }}</div>
             </div>
-            <router-link class="ico-bag__wrap" to="/Review">
-              <button class="attend">Review</button>
-            </router-link>
           </div>
         </li>
       </ul>
@@ -26,15 +23,33 @@
 </template>
 
 <script>
+/* import Review from "@/components/Review" ;*/
+
 export default {
   name: "Attended",
+  /*  components: { Review }, */
   data() {
     return {
-      title: "List of Events Attended",
+      /* 
+      id: null */ content: "",
+
+      title: "Events Attended",
     };
   },
-  props: {
-    attendedList: Array,
+
+  props: ["attendedList", "review", "eventId"],
+
+  computed: {},
+  methods: {
+    createReview() {
+      this.$store.commit("setEventReview", {
+        reviewContent: this.content,
+        eventid: event.id,
+        date: new Date(),
+      });
+
+      this.content = {};
+    },
   },
 };
 </script>
@@ -72,20 +87,13 @@ export default {
 }
 .event-item-wrap {
   display: grid;
-  grid-template-columns: 2fr 2fr 2fr 2fr;
+  grid-template-columns: 2fr 2fr 4fr;
   grid-template-rows: 50px 50px;
   text-align: center;
   padding: 20px 0;
   background: $white;
 }
-/* .info-event {
- 
-  font-size: 1rem;
-  text-align: left;
-  padding-top: 10px;
-  padding-left: 100px;
-  display: flex;
-  flex-direction: column;
-  /*   box-shadow: 1px 1px 8px #888888; 
-} */
+.add-review {
+  min-width: 100px;
+}
 </style>

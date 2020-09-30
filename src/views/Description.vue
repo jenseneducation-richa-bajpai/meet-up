@@ -11,12 +11,12 @@
         </router-link>
       </div>
 
-      <div class="image">
+      <div class="imageD">
         <img v-bind:src="event.image" />
       </div>
 
       <div class="detail-disc">
-        <div class="details">Details: {{ event.details}}</div>
+        <div class="details">Details: {{ event.details }}</div>
       </div>
     </div>
   </div>
@@ -25,6 +25,7 @@
 <script>
 import Header from "@/components/Header";
 export default {
+  name: "Description",
   components: {
     Header,
   },
@@ -66,8 +67,8 @@ export default {
   margin-left: 100px;
   padding-left: 50px;
 }
-.image {
-  height: 300px;
+.imageD {
+  height: 400px;
 }
 img {
   width: 500px;
@@ -125,27 +126,9 @@ img {
   margin-top: 20px;
 }
 
-/*.inner {
-    display: flex;
-    flex-direction: row;
-      height: 400px;
-    width: auto; 
-  }
-} */
-/* .image {
-  width: 400px;
-  height: 400px;
-}
 img {
   float: left;
   width: 400px;
   height: 400px;
-}*/
-/* .info {
-  height: 100%;
-  width: 200px;
-  display: flex;
-  flex-direction: column;
-  font-size: 1.5rem;
-} */
+}
 </style>

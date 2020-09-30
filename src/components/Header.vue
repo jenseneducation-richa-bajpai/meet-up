@@ -1,22 +1,24 @@
 <template>
   <div class="header">
     <router-link to="/">
-      <span class="logo" v-bind:class="{
-        'logo-text': $route.path == '/',
-      }">MeetUp</span>
+      <span
+        class="logo"
+        v-bind:class="{
+          'logo-text': $route.path == '/',
+        }"
+        >MeetUp</span
+      >
     </router-link>
-    <router-link to="/Attending" class="hist">Attending</router-link>
-    <router-link to="/History" class="hist">History</router-link>
+    <div class="hist">
+      <router-link to="/Attending" class="hist">Attending|</router-link>
+      <router-link to="/History" class="hist">History</router-link>
+    </div>
   </div>
 </template>
 
 <script>
 export default {
   name: "Header",
-
-  /* props: {
-    msg: String,
-  }, */
 };
 </script>
 
@@ -40,7 +42,6 @@ div.header {
     font-size: 40px;
     font-weight: bold;
     font-family: "Caveat Brush", cursive;
-    /* 	font-family: 'Montez', cursive; */
     z-index: 999;
   }
 
@@ -51,7 +52,7 @@ div.header {
     text-decoration: none;
   }
   .hist {
-    font-size: 1.2rem;
+    font-size: 1.5rem;
     font-weight: bold;
   }
 }

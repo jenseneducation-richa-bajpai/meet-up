@@ -11,13 +11,9 @@ import Going from "@/components/Going";
 export default {
   components: { Header, Going },
   created() {
-    this.$store.dispatch("getData");
-  }, 
+    this.$store.dispatch("getAttend");
+  },
   computed: {
-    /* event() {
-      let id = this.$route.params.id;
-      return this.$store.state.attendList.find((event) => event.id == id); 
-    },*/
     attendList() {
       return this.$store.state.attendList;
     },
